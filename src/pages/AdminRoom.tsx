@@ -10,6 +10,7 @@ import { RoomCode } from '../components/RoomCode'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 import { database } from '../services/firebase'
+import { useEffect } from 'react'
 
 type RoomParams = {
   id: string
@@ -20,7 +21,12 @@ export const AdminRoom = () => {
   const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
-  const { title, questions } = useRoom(roomId)
+  const { title, questions, authorId } = useRoom(roomId)
+
+  useEffect(() => {
+    if (authorId)
+      if (authorId !== localStorage.getItem('userId')) history.push('/')
+  }, [authorId, history])
 
   const handleEndRoom = async () => {
     await database.ref(`rooms/${roomId}`).update({ endedAt: new Date() })
@@ -47,6 +53,22 @@ export const AdminRoom = () => {
       isHighlighted: true,
     })
   }
+
+  if (!authorId)
+    return (
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    )
 
   return (
     <div id="page-room">

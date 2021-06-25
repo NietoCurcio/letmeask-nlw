@@ -57,6 +57,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
         name: displayName,
         avatar: photoURL,
       })
+      localStorage.setItem('userId', uid)
     }
   }
 

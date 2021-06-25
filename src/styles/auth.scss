@@ -3,6 +3,20 @@
   align-items: stretch;
   height: 100vh;
 
+  &.dark {
+    background-color: #333;
+    color: #fff;
+    main .main-content {
+      path:nth-child(-n + 5) {
+        fill: #fff;
+      }
+    }
+
+    .separator {
+      color: #f4f4f4;
+    }
+  }
+
   aside {
     flex: 7;
     background-color: #835afd;
@@ -31,6 +45,12 @@
   }
 
   main {
+    .wrg-toggle {
+      align-self: flex-start;
+      margin-top: 1.5rem;
+      margin-left: 2.5rem;
+    }
+
     flex: 8;
     padding: 0 32px;
 
@@ -47,7 +67,7 @@
     align-items: stretch;
     text-align: center;
 
-    & > img {
+    & > svg {
       align-self: center;
     }
 
@@ -137,11 +157,12 @@
 @media screen and (max-width: 768px) {
   #page-auth {
     flex-direction: column-reverse;
-    height: 100vh;
+    overflow: auto;
+    height: auto;
+
     aside {
       margin-top: 1rem;
       position: relative;
-      flex: 0;
       padding: 2rem;
 
       &::before {
@@ -154,10 +175,12 @@
       }
 
       img {
+        display: block;
         position: absolute;
         height: 110%;
         left: 1.7rem;
-        z-index: 1;
+        padding: 0;
+        margin: 0;
         overflow: hidden;
       }
 
@@ -172,7 +195,12 @@
     }
 
     main {
-      flex: 3;
+      flex-direction: column-reverse;
+
+      .wrg-toggle {
+        margin-top: 0.7rem;
+        margin-bottom: 2rem;
+      }
     }
   }
 }

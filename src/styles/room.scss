@@ -158,6 +158,10 @@
           font-size: 1rem;
         }
       }
+
+      .question-list > div:last-child {
+        margin-bottom: 1rem;
+      }
     }
   }
 }

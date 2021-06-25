@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { Button } from '../components/Button'
-import logoImg from '../assets/images/logo.svg'
 
 import '../styles/room.scss'
 import { RoomCode } from '../components/RoomCode'

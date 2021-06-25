@@ -4,7 +4,7 @@ import '../styles/toggle.scss'
 export const Toggle = (props: any) => {
   const [toggle, setToggle] = useState(() => {
     const { theme } = props
-    if (theme == 'light') return false
+    if (theme === 'light') return false
     else return true
   })
 

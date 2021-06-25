@@ -1,6 +1,5 @@
 import { useHistory, useParams } from 'react-router-dom'
 import { Button } from '../components/Button'
-import logoImg from '../assets/images/logo.svg'
 import deleteImg from '../assets/images/delete.svg'
 import checkImg from '../assets/images/check.svg'
 import answerImg from '../assets/images/answer.svg'
@@ -10,10 +9,17 @@ import { RoomCode } from '../components/RoomCode'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 import { database } from '../services/firebase'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Toggle } from '../components/Toggle'
 import { useTheme } from '../hooks/useTheme'
 import { LogoImg } from '../components/LogoImg'
+import {
+  ConfirmButton,
+  DeclineButton,
+  ModalContainer,
+  ModalMain,
+  Buttons,
+} from '../components/ModalStyles/Modal'
 
 type RoomParams = {
   id: string
@@ -26,6 +32,7 @@ export const AdminRoom = () => {
   const roomId = params.id
   const { title, questions, authorId } = useRoom(roomId)
   const { theme, toggleTheme } = useTheme()
+  const [showModal, setShowModal] = useState({ show: false, questionId: '' })
 
   useEffect(() => {
     if (authorId)
@@ -38,12 +45,7 @@ export const AdminRoom = () => {
   }
 
   const handleDeleteQuestion = async (questionId: string) => {
-    if (window.confirm('Tem certeza que você deseja excluir essa pergunta?')) {
-      const questionRef = database
-        .ref(`rooms/${roomId}/questions/${questionId}`)
-        .remove()
-      await questionRef
-    }
+    setShowModal({ show: true, questionId })
   }
 
   const handleCheckQuestion = async (questionId: string) => {
@@ -56,6 +58,17 @@ export const AdminRoom = () => {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isHighlighted: true,
     })
+  }
+
+  const handleConfirm = async () => {
+    const questionRef = database
+      .ref(`rooms/${roomId}/questions/${showModal.questionId}`)
+      .remove()
+    await questionRef
+  }
+
+  const handleModalClick = (toShow: boolean) => {
+    setShowModal({ show: toShow, questionId: '' })
   }
 
   if (!authorId)
@@ -76,6 +89,27 @@ export const AdminRoom = () => {
 
   return (
     <div id="page-room" className={theme}>
+      {showModal.show && (
+        <ModalContainer
+          display={showModal}
+          onClick={() => handleModalClick(showModal ? false : true)}
+        >
+          <ModalMain theme={theme}>
+            Tem certeza que você deseja excluir essa pergunta?
+            <Buttons>
+              <ConfirmButton onClick={handleConfirm} theme={theme}>
+                Sim
+              </ConfirmButton>
+              <DeclineButton
+                onClick={() => handleModalClick(false)}
+                theme={theme}
+              >
+                Não
+              </DeclineButton>
+            </Buttons>
+          </ModalMain>
+        </ModalContainer>
+      )}
       <header>
         <div className="content">
           <LogoImg />

@@ -39,7 +39,7 @@ export const LogoImg = () => {
       <path
         d="M81.0842 15.9024V8.73438C81.0842 5.56737 83.6516 3 86.8186 3H148.463C151.63 3 154.198 5.56737 154.198 8.73438V48.8751C154.198 52.0421 151.63 54.6094 148.463 54.6094H138.428L141.782 70.2603C142.075 71.6282 140.436 72.563 139.408 71.6141L124.092 57.4766H86.8186C83.6516 57.4766 81.0842 54.9093 81.0842 51.7422V48.8751"
         stroke="url(#paint3_linear)"
-        stroke-width="4.30079"
+        strokeWidth="4.30079"
       />
       <defs>
         <linearGradient
@@ -50,8 +50,8 @@ export const LogoImg = () => {
           y2="53.1105"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#485BFF" />
-          <stop offset="1" stop-color="#FF59F8" />
+          <stop stopColor="#485BFF" />
+          <stop offset="1" stopColor="#FF59F8" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -61,8 +61,8 @@ export const LogoImg = () => {
           y2="53.1105"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#485BFF" />
-          <stop offset="1" stop-color="#FF59F8" />
+          <stop stopColor="#485BFF" />
+          <stop offset="1" stopColor="#FF59F8" />
         </linearGradient>
         <linearGradient
           id="paint2_linear"
@@ -72,8 +72,8 @@ export const LogoImg = () => {
           y2="53.1105"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#485BFF" />
-          <stop offset="1" stop-color="#FF59F8" />
+          <stop stopColor="#485BFF" />
+          <stop offset="1" stopColor="#FF59F8" />
         </linearGradient>
         <linearGradient
           id="paint3_linear"
@@ -83,8 +83,8 @@ export const LogoImg = () => {
           y2="77.547"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#485BFF" />
-          <stop offset="1" stop-color="#FF59F8" />
+          <stop stopColor="#485BFF" />
+          <stop offset="1" stopColor="#FF59F8" />
         </linearGradient>
       </defs>
     </svg>

@@ -109,3 +109,55 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  #page-room {
+    padding: 0 1rem;
+
+    header .content {
+      margin-left: 0;
+      flex-direction: column;
+
+      > div {
+        flex-direction: column;
+
+        button:first-child {
+          margin-top: 0.8rem;
+        }
+
+        button {
+          height: 35px;
+          margin: 0;
+        }
+      }
+    }
+    .room-code {
+      height: 35px;
+      margin-top: 0.8rem;
+
+      > div {
+        padding: 0 6px;
+      }
+    }
+
+    main {
+      .room-title {
+        h1 {
+          font-size: 1.3rem;
+        }
+
+        span {
+          font-size: 0.75rem;
+        }
+      }
+
+      form {
+        button {
+          height: 35px;
+          padding: 0 16px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

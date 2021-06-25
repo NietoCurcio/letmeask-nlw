@@ -65,8 +65,10 @@ export const Room = () => {
       <header>
         <div className="content">
           <LogoImg />
-          <RoomCode code={roomId} />
-          <Toggle theme={theme} toggleTheme={toggleTheme} />
+          <div>
+            <RoomCode code={roomId} />
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+          </div>
         </div>
       </header>
 

@@ -11,6 +11,9 @@ import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 import { database } from '../services/firebase'
 import { useEffect } from 'react'
+import { Toggle } from '../components/Toggle'
+import { useTheme } from '../hooks/useTheme'
+import { LogoImg } from '../components/LogoImg'
 
 type RoomParams = {
   id: string
@@ -22,6 +25,7 @@ export const AdminRoom = () => {
   const params = useParams<RoomParams>()
   const roomId = params.id
   const { title, questions, authorId } = useRoom(roomId)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     if (authorId)
@@ -71,15 +75,18 @@ export const AdminRoom = () => {
     )
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
-          <div>
+          <LogoImg />
+          <div className="adminRoom">
             <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>
-              Encerrar sala
-            </Button>
+            <div>
+              <Button isOutlined onClick={handleEndRoom}>
+                Encerrar sala
+              </Button>
+              <Toggle theme={theme} toggleTheme={toggleTheme} />
+            </div>
           </div>
         </div>
       </header>

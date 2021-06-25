@@ -1,4 +1,6 @@
 #page-room {
+  min-height: 100vh;
+
   header {
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
@@ -17,9 +19,23 @@
       > div {
         display: flex;
         gap: 16px;
+        align-items: center;
+
+        > div {
+          display: flex;
+        }
 
         button {
           height: 40px;
+        }
+      }
+
+      > div.adminRoom {
+        flex-direction: column;
+        > div {
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
         }
       }
     }
@@ -120,6 +136,12 @@
     path:nth-child(-n + 5) {
       fill: #fff;
     }
+
+    main form .form-footer .user-info {
+      span {
+        color: #fff !important;
+      }
+    }
   }
 }
 
@@ -132,16 +154,15 @@
       flex-direction: column;
 
       > div {
-        flex-direction: column;
-
-        button:first-child {
-          margin-top: 0.8rem;
-        }
-
+        margin-top: 0.8rem;
         button {
           height: 35px;
           margin: 0;
         }
+      }
+
+      svg {
+        max-height: 64px;
       }
     }
     .room-code {

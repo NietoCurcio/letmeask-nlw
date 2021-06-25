@@ -9,6 +9,9 @@ import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
+import { useTheme } from '../hooks/useTheme'
+import { Toggle } from '../components/Toggle'
+import { LogoImg } from '../components/LogoImg'
 
 type RoomParams = {
   id: string
@@ -20,6 +23,7 @@ export const Room = () => {
   const [newQuestion, setNewQuestion] = useState('')
   const roomId = params.id
   const { title, questions } = useRoom(roomId)
+  const { theme, toggleTheme } = useTheme()
 
   const handleSendQuestion = async (e: FormEvent) => {
     e.preventDefault()
@@ -57,11 +61,12 @@ export const Room = () => {
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
+          <LogoImg />
           <RoomCode code={roomId} />
+          <Toggle theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
 

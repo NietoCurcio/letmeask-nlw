@@ -10,6 +10,8 @@ import { database } from '../services/firebase'
 import { useTheme } from '../hooks/useTheme'
 import { LogoImg } from '../components/LogoImg'
 import { Toggle } from '../components/Toggle'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export function Home() {
   const history = useHistory()
@@ -31,16 +33,22 @@ export function Home() {
   const handleJoinRoom = async (event: FormEvent) => {
     event.preventDefault()
 
-    if (!roomCode.trim()) return
+    const notify = (message: string) =>
+      toast.error(message, { autoClose: 3000 })
+
+    if (!roomCode.trim()) {
+      notify('Room name empty.')
+      return
+    }
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get()
     if (!roomRef.exists()) {
-      alert('Room does not exists')
+      notify('Room does not exists')
       return
     }
 
     if (roomRef.val().endedAt) {
-      alert('Room already closed')
+      notify('Room already closed')
       return
     }
 
@@ -58,6 +66,7 @@ export function Home() {
         <p>Tire as dúvidas de sua audiência em tempo real</p>
       </aside>
       <main>
+        <ToastContainer />
         <div className="main-content">
           <LogoImg />
           <button onClick={(e) => handleCreateRoom(e)} className="create-room">

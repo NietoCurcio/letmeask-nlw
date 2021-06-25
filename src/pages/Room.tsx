@@ -3,7 +3,7 @@ import { Button } from '../components/Button'
 
 import '../styles/room.scss'
 import { RoomCode } from '../components/RoomCode'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 import { Question } from '../components/Question'
@@ -11,6 +11,8 @@ import { useRoom } from '../hooks/useRoom'
 import { useTheme } from '../hooks/useTheme'
 import { Toggle } from '../components/Toggle'
 import { LogoImg } from '../components/LogoImg'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 type RoomParams = {
   id: string
@@ -23,11 +25,27 @@ export const Room = () => {
   const roomId = params.id
   const { title, questions } = useRoom(roomId)
   const { theme, toggleTheme } = useTheme()
+  const [isClosed, setIsClosed] = useState(false)
+
+  useEffect(() => {
+    database
+      .ref(`rooms/${roomId}`)
+      .get()
+      .then((roomRef) => {
+        if (roomRef.val().endedAt) setIsClosed(true)
+      })
+  }, [roomId])
 
   const handleSendQuestion = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (newQuestion.trim() === '') return
+    const notify = (message: string) =>
+      toast.error(message, { autoClose: 3000 })
+
+    if (newQuestion.trim() === '') {
+      notify('Question empty.')
+      return
+    }
 
     if (!user) throw new Error('You must be logged in')
     const question = {
@@ -72,6 +90,7 @@ export const Room = () => {
       </header>
 
       <main>
+        <ToastContainer />
         <div className="room-title">
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
@@ -94,7 +113,7 @@ export const Room = () => {
               </span>
             )}
 
-            <Button type="submit" disabled={!user}>
+            <Button type="submit" disabled={!user || isClosed}>
               Enviar pergunta
             </Button>
           </div>

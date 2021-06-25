@@ -7,6 +7,8 @@ import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export function NewRoom() {
   const { user } = useAuth()
@@ -16,7 +18,17 @@ export function NewRoom() {
   const handleCreateRoom = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (newRoom.trim() === '' || !user) return
+    const notify = (message: string) =>
+      toast.error(message, { autoClose: 3000 })
+
+    if (newRoom.trim() === '') {
+      notify('Room name empty.')
+      return
+    }
+    if (!user) {
+      notify('Only authenticated users can create rooms')
+      return
+    }
 
     const roomRef = database.ref('rooms')
     const firebaseRoom = await roomRef.push({
@@ -38,6 +50,7 @@ export function NewRoom() {
         <p>Tire as dúvidas de sua audiência em tempo real</p>
       </aside>
       <main>
+        <ToastContainer />
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>

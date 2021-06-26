@@ -67,12 +67,8 @@ O Firebase suporta autenticação com várias plataformas como o próprio Google
 ### PWA - Progressive Web Apps
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem">
-  <p align="center">
   <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" width="400" alt="Let me Ask Progressive web app">
-  </p>
-  <p align="center">
   <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" width="400" alt="Let me Ask PWA">
-  </p>
 </div>
 
 Progressive Web Apps, são apps que permitem que o usuário em um dispositivo mobile adicione o app em sua home screen, com o ícone do app. Melhora a experiência do usuário visto que não há a necessidade de um app store.

@@ -40,12 +40,14 @@ Funcionalidades extras:
 ### Github OAuth
 
 <p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauthgithub.png?raw=true" width="360" alt="Let me Ask">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauthgithub.png?raw=true" width="288" alt="Let me Ask">
 </p>
 
 O Firebase suporta autenticação com várias plataformas como o próprio Google, Github, Facebook, Twitter, entre outros.
 
 ### Dark theme
+
+O usuário consegue trocar entre "light" and "dark" theme pelo botão toggle.
 
 <p align="center">
   <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/dark.png?raw=true" width="750" alt="Let me Ask">
@@ -53,44 +55,37 @@ O Firebase suporta autenticação com várias plataformas como o próprio Google
 
 ### Modal & Styled Components
 
-<table>
-  <tr style="display: flex; flex-wrap: wrap;">
-    <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal1.png?raw=true" width="750" alt="Let me ask">
-</p></td>
-    <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal2.png?raw=true" width="750" alt="Let me ask">
-</p></td>
-  </tr>
-</table>
+O uso de Styled Components permite criarmos componentes estilizados, por exemplo, um `<button>` puro pode ser transformado em um `<Button>` com a estilização necessária, outra vantagem é que a estilização é feita em um arquivo Javascript, então isso permite criar funções, declaração `if` e etc.
+
+<img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal1.png?raw=true" width="750" alt="Let me ask">
+  
+<img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal2.png?raw=true" width="750" alt="Let me ask">
 
 ### PWA - Progressive Web Apps
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" width="400" alt="Let me Ask Progressive web app">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" width="400" alt="Let me Ask PWA">
-</div>
-
 Progressive Web Apps, são apps que permitem que o usuário em um dispositivo mobile adicione o app em sua home screen, com o ícone do app. Melhora a experiência do usuário visto que não há a necessidade de um app store.
+
+<table>
+  <tr>
+	<td><img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" width="400" alt="Let me Ask Progressive web app"></td>
+	<td><img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" width="400" alt="Let me Ask PWA"></td>
+  </tr>
+</table>
 
 ### Responsividade
 
 <table>
-  <tr style="display: flex; flex-wrap: wrap;">
-    <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" height="400" alt="Let me Ask">
-</p></td>
-    <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive2.png?raw=true" height="400" alt="Let me Ask">
-</p></td>
+  <tr>
+    <td><img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" width="280" alt="Let me Ask"></td>
+    <td><img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive2.png?raw=true" width="280" alt="Let me Ask"></td>
   </tr>
 </table>
 
 ### Alerts
 
-<img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/alert.jpeg?raw=true" height="400" alt="Let me Ask">
-
 Alertas quando alguma informação inválida é inserida, através da biblioteca [React-Toastify](https://www.npmjs.com/package/react-toastify)
+
+<img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/alert.jpeg?raw=true" width="250" alt="Let me Ask">
 
 ### Segurança
 

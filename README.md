@@ -1,6 +1,6 @@
 # Let me ask
 
-> Projeto contruído durante da semana do Next Level Week da Rocketseat
+> Projeto construído durante da semana do Next Level Week da Rocketseat
 
 Um aplicativo para criar um ambiente de perguntas e respostas.
 
@@ -12,8 +12,8 @@ Um aplicativo para criar um ambiente de perguntas e respostas.
 
 Este app é um SPA (single page application) construído com o React framework. Nas aulas foram explicados conceitos muito importantes como componente, estado e propriedade ou "props" do componente. Foi usado o Typescript template para seu desenvolvimento, apesar de requerer configurações de tipagens, o Typescript traz diversos benefícios como:
 
-- Menos propício a erros de semantica, código mais seguro, por exemplo se uma função espera uma "string" o typescript alerta quando isso não ocorre.
-- Maior controle das propriedades de objetos, visto que o tipo de um objeto ou até mesmo de array é declarado e o Typescript possa entender a interface daqueles dados.
+- Menos propício a erros de semântica, código mais seguro, por exemplo se uma função espera uma "string" o Typescript alerta quando isso não ocorre.
+- Maior controle das propriedades de objetos, visto que o tipo de um objeto ou até mesmo de um array é declarado e o Typescript possa entender a interface daqueles dados.
 
 ### React Context API
 
@@ -29,15 +29,21 @@ API Context do React é uma forma muito poderosa e simples de compartilhar o est
 
 ### Realtime Database
 
-<p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/realtime.png?raw=true" width="750" alt="Let me Ask">
-</p>
+Além da autenticação, também é usado o serviço Realtime Database, no qual permite uma rápida configuração de um banco de dados e flexível.
 
 ## A milha extra
 
-A milha extra são funcionalidades que adicionamos após o fim das aulas, algumas funcionalidades são sugestões e dicas do Diego no qual deu as aulas da trilha de React, mas também somos incentivados a desenvolver alguma funcionalidade a mais, a milha extra. Dessa forma, é possível aproveitar muito mais qualquer conteúdo aprendido,pois após as aulas é essêncial ter ideias, pesquisar, desenvolver e resolver problemas e dúvidas em seu próprio desenvolvimento.
+A milha extra são funcionalidades que adicionamos após o fim das aulas, algumas funcionalidades são sugestões e dicas do Diego no qual deu as aulas da trilha de React, mas também somos incentivados a desenvolver alguma funcionalidade a mais, a milha extra. Dessa forma, é possível aproveitar muito mais o aprendizado de qualquer conteúdo, pois após as aulas é essencial ter ideias, pesquisar, desenvolver e resolver problemas e dúvidas em seu próprio desenvolvimento.
 
 Funcionalidades extras:
+
+### Github OAuth
+
+<p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauthgithub.png?raw=true" width="750" alt="Let me Ask">
+</p>
+
+O Firebase suporta autenticação com várias plataformas como o próprio Google, Github, Facebook, Twitter, entre outros.
 
 ### Dark theme
 
@@ -60,21 +66,39 @@ Funcionalidades extras:
 
 ### PWA - Progressive Web Apps
 
-<p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.png?raw=true" width="750" alt="Let me Ask">
-</p>
+<table>
+  <tr style="display: flex; flex-wrap: wrap;">
+    <td><p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" width="400" alt="Let me Ask Progressive web app">
+</p></td>
+    <td><p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" width="400" alt="Let me Ask PWA">
+</p></td>
+  </tr>
+</table>
 
-Apps permitem que o usuario adicione o app em sua home screen com o icone do app e também...
+Progressive Web Apps, são apps que permitem que o usuário em um dispositivo mobile adicione o app em sua home screen, com o ícone do app. Melhora a experiência do usuário visto que não há a necessidade de um app store.
 
 ### Responsividade
 
-<p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" width="750" alt="Let me Ask">
-</p>s
+<table>
+  <tr style="display: flex; flex-wrap: wrap;">
+    <td><p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" width="400" alt="Let me Ask">
+</p></td>
+    <td><p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive2.png?raw=true" width="400" alt="Let me Ask">
+</p></td>
+  </tr>
+</table>
 
 ### Alerts
 
-Alertas quando alguma informação inválida é inserida, atravéz da biblioteca [React-Toastify](https://www.npmjs.com/package/react-toastify)
+<p align="center">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/alert.jpeg?raw=true" width="400" alt="Let me Ask">
+</p>
+
+Alertas quando alguma informação inválida é inserida, através da biblioteca [React-Toastify](https://www.npmjs.com/package/react-toastify)
 
 ### Segurança
 
@@ -89,16 +113,15 @@ useEffect(() => {
   }, [authorId, history])
 ```
 
-Após carregar o authorId da sala, se o usuário que esta acessando uma pagina admin da sala não for o autor dessa sala, ele é redirecionado para a Home.
+Após carregar o authorId da sala, se o usuário que está acessando uma página admin da sala não for o autor dessa sala, ele é redirecionado para a Home.
 
-Note que apesar do usuario que não é o admin da sala ser redirecionado, é preciso principalmente se atentar também as regras de negócio da aplicação, no back-end, tendo isso em vista, regras no Realtime Database foram configuradas durante as aulas como somente usuários autenticados podem criar perguntas, somente os usuários que criaram a sala podem fazer operações de escrita na sala, somente o autor do "like" pode tirar o "like" de uma pergunta e somente o autor da sala pode remover perguntas da sala.
+Note que, apesar do usuário que não é o admin da sala ser redirecionado, é preciso principalmente se atentar também as regras de negócio da aplicação, no back-end, tendo isso em vista, regras no Realtime Database foram configuradas durante as aulas como somente usuários autenticados podem criar perguntas, somente os usuários que criaram a sala podem fazer operações de escrita na sala, somente o autor do "like" pode tirar o "like" de uma pergunta e somente o autor da sala pode remover perguntas da sala.
 
-Uma outra forma de fazer...
-Armazeno a informação do usuário em localStorage, o motivo disso é que muitas aplicações são construídas armazenando JSON Web Tokens em localStorage para manter requisições autenticadas com o servidor.
+Uma outra forma que foi possível fazer é armazenar a informação do usuário em localStorage. O motivo desse pensamento é porque muitas aplicações são construídas armazenando JSON Web Tokens em localStorage para manter requisições autenticadas com o servidor.
 
 ## Deploy
 
-O app pode ser acessado [por aqui](https://letmeask-ee03f.web.app/). Ele é hospedado atravez da funcionalidade "Hosting" do Firebase.
+O app pode ser acessado [por aqui](https://letmeask-ee03f.web.app/). Ele é hospedado através da funcionalidade "Hosting" do Firebase.
 
 ## O que é o NLW?
 

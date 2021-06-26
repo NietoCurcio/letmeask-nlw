@@ -24,7 +24,7 @@ API Context do React é uma forma muito poderosa e simples de compartilhar o est
 ### Autenticação
 
 <p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauth.png?raw=true" width="750" alt="Let me Ask">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauth.png?raw=true" width="360" alt="Let me Ask">
 </p>
 
 ### Realtime Database
@@ -40,7 +40,7 @@ Funcionalidades extras:
 ### Github OAuth
 
 <p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauthgithub.png?raw=true" width="750" alt="Let me Ask">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/oauthgithub.png?raw=true" width="360" alt="Let me Ask">
 </p>
 
 O Firebase suporta autenticação com várias plataformas como o próprio Google, Github, Facebook, Twitter, entre outros.
@@ -56,10 +56,10 @@ O Firebase suporta autenticação com várias plataformas como o próprio Google
 <table>
   <tr style="display: flex; flex-wrap: wrap;">
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nl/blob/main/.github/images/modal1.png?raw=true" width="750" alt="Seller Finder">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal1.png?raw=true" width="750" alt="Let me ask">
 </p></td>
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nl/blob/main/.github/images/modal2.png?raw=true" width="750" alt="Seller Finder">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/modal2.png?raw=true" width="750" alt="Let me ask">
 </p></td>
   </tr>
 </table>
@@ -69,10 +69,10 @@ O Firebase suporta autenticação com várias plataformas como o próprio Google
 <table>
   <tr style="display: flex; flex-wrap: wrap;">
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" width="400" alt="Let me Ask Progressive web app">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa.jpeg?raw=true" height="400" alt="Let me Ask Progressive web app">
 </p></td>
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" width="400" alt="Let me Ask PWA">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/pwa2.jpeg?raw=true" height="400" alt="Let me Ask PWA">
 </p></td>
   </tr>
 </table>
@@ -84,19 +84,17 @@ Progressive Web Apps, são apps que permitem que o usuário em um dispositivo mo
 <table>
   <tr style="display: flex; flex-wrap: wrap;">
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" width="400" alt="Let me Ask">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive.png?raw=true" height="400" alt="Let me Ask">
 </p></td>
     <td><p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive2.png?raw=true" width="400" alt="Let me Ask">
+  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/responsive2.png?raw=true" height="400" alt="Let me Ask">
 </p></td>
   </tr>
 </table>
 
 ### Alerts
 
-<p align="center">
-  <img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/alert.jpeg?raw=true" width="400" alt="Let me Ask">
-</p>
+<img src="https://github.com/NietoCurcio/letmeask-nlw/blob/main/.github/images/alert.jpeg?raw=true" height="400" alt="Let me Ask">
 
 Alertas quando alguma informação inválida é inserida, através da biblioteca [React-Toastify](https://www.npmjs.com/package/react-toastify)
 

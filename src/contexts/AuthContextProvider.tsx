@@ -11,6 +11,7 @@ type AuthContextType = {
   user: User | undefined
   // signInWithGoogle: Function seems to be working as well
   signInWithGoogle: () => Promise<void>
+  signInWithGithub: () => Promise<void>
 }
 
 type AuthContextProviderProps = {
@@ -57,12 +58,30 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
         name: displayName,
         avatar: photoURL,
       })
-      localStorage.setItem('userId', uid)
+      // localStorage.setItem('userId', uid)
+    }
+  }
+
+  const signInWithGithub = async () => {
+    var provider = new firebase.auth.GithubAuthProvider()
+    const response = await firebase.auth().signInWithPopup(provider)
+    const { displayName, photoURL, uid }: any = response.user
+    if (response.user) {
+      const { displayName, photoURL, uid } = response.user
+
+      if (!displayName || !photoURL)
+        throw new Error('Missing information from Google Account')
+
+      setUser({
+        id: uid,
+        name: displayName,
+        avatar: photoURL,
+      })
     }
   }
 
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signInWithGithub }}>
       {children}
     </AuthContext.Provider>
   )

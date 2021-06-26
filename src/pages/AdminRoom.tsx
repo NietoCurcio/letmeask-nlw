@@ -20,13 +20,14 @@ import {
   ModalMain,
   Buttons,
 } from '../components/ModalStyles/Modal'
+import { useAuth } from '../hooks/useAuth'
 
 type RoomParams = {
   id: string
 }
 
 export const AdminRoom = () => {
-  // const { user } = useAuth()
+  const { user } = useAuth()
   const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
@@ -35,8 +36,7 @@ export const AdminRoom = () => {
   const [showModal, setShowModal] = useState({ show: false, questionId: '' })
 
   useEffect(() => {
-    if (authorId)
-      if (authorId !== localStorage.getItem('userId')) history.push('/')
+    if (authorId) if (authorId !== user?.id) history.push('/')
   }, [authorId, history])
 
   const handleEndRoom = async () => {

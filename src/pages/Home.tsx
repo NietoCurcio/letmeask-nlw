@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 export function Home() {
   const history = useHistory()
-  const { user, signInWithGoogle } = useAuth()
+  const { user, signInWithGoogle, signInWithGithub } = useAuth()
   const [roomCode, setRoomCode] = useState('')
   const { theme, toggleTheme } = useTheme()
 
@@ -27,6 +27,15 @@ export function Home() {
     } catch (err) {
       console.log(err)
       console.log('Could not sign in user: ', err.message)
+    }
+  }
+
+  const handleCreateRoomGithub = async () => {
+    try {
+      if (!user) await signInWithGithub()
+      history.push('/rooms/new')
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -69,10 +78,23 @@ export function Home() {
         <ToastContainer />
         <div className="main-content">
           <LogoImg />
-          <button onClick={(e) => handleCreateRoom(e)} className="create-room">
-            <img src={googleIconImg} alt="Logo do Google" />
-            Crie sua sala com o Google
-          </button>
+          <div className="auth">
+            <div>
+              <button
+                onClick={(e) => handleCreateRoom(e)}
+                className="create-room"
+              >
+                <img src={googleIconImg} alt="Logo do Google" />
+              </button>
+              <p>Crie sua sala</p>
+              <button
+                onClick={handleCreateRoomGithub}
+                className="create-room-github"
+              >
+                <i className="fab fa-github"></i>
+              </button>
+            </div>
+          </div>
           <div className="separator">ou entre em uma sala</div>
           <form onSubmit={handleJoinRoom}>
             <input

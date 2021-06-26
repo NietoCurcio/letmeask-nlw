@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { Button } from '../components/Button'
 
 import '../styles/room.scss'
@@ -109,7 +109,10 @@ export const Room = () => {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>
+                Para enviar uma pergunta,{' '}
+                <button>
+                  <Link to="/">faça seu login</Link>
+                </button>
               </span>
             )}
 

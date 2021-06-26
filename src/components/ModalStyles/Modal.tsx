@@ -8,6 +8,7 @@ export const ModalContainer: any = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   display: ${(props: any) => (props.display ? 'block' : 'none')};
+  z-index: 10;
 `
 
 export const ModalMain: any = styled.section`
@@ -22,6 +23,10 @@ export const ModalMain: any = styled.section`
   transform: translate(-50%, -50%);
   padding: 3rem;
   border-radius: 2rem;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `
 export const Description = styled.p`
   margin-bottom: 1rem;

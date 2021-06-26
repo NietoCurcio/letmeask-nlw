@@ -29,7 +29,7 @@ API Context do React é uma forma muito poderosa e simples de compartilhar o est
 
 ### Realtime Database
 
-Além da autenticação, também é usado o serviço Realtime Database, no qual permite uma rápida configuração de um banco de dados e flexível.
+Além da autenticação, também é usado o serviço Realtime Database, no qual permite uma rápida e flexível configuração de um banco de dados.
 
 ## A milha extra
 
